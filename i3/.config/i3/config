@@ -164,22 +164,9 @@ bar {
 #############################################################
 
 # Wallpaper
-exec feh --bg-fill ~/Pictures/wallpapers/lee-aik-soon-39512.jpg
-
-# High DPI adjustment
-exec xrandr --dpi 220
 
 # Key press repeat rate
 exec xset r rate 300 30
 
 # Switch caps and Escape
 exec setxkbmap -option caps:escape
-
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
