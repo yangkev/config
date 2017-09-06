@@ -129,8 +129,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # scratchpad
-bindsym $mod+m move scratchpad
-bindsym $mod+o scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 
 #**************************** Workspaces *****************************
 
