@@ -1,12 +1,13 @@
 #********************** Key Bindings ***************************
 set $mod Mod4
+set $sup Mod1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec --no-startup-id urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -24,27 +25,16 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
 # split in [h]orizontal or [v]ertical orientation
 bindsym $mod+h split h
 bindsym $mod+v split v
+bindsym $mod+t split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -60,10 +50,8 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
+# focus the [p]arent/[c]hild container
+bindsym $mod+p focus parent
 bindsym $mod+c focus child
 
 # Init workspaces
@@ -103,12 +91,13 @@ bindsym $mod+Shift+9 move container to workspace $w9
 bindsym $mod+Shift+0 move container to workspace $w10
 
 # switch between current and previously focused workspaces
-bindsym $mod+Tab workspace back_and_forth
-bindsym $mod+Shit+Tab move container to workspace back_and_forth
+workspace_auto_back_and_forth yes
+bindsym $sup+Tab workspace back_and_forth
+bindsym $sup+Shift+Tab move container to workspace back_and_forth
 
 # next/previous workspace
-bindsym Mod1+Tab focus right
-bindsym Mod1+Shift+Tab focus left
+# bindsym $sup+Tab focus right
+# bindsym $sup+Shift+Tab focus left
 
 # reload/restart/exit
 bindsym $mod+Shift+c reload
@@ -133,6 +122,14 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
+#**************************** Multi-Monitor *****************************
+
+# Cycle through outputs
+bindsym $mod+Tab focus output right
+
+# Move the whole workspace to the next output
+bindsym $mod+x move workspace to output right
+
 #**************************** Workspaces *****************************
 
 
@@ -153,6 +150,18 @@ hide_edge_borders both
 # No title bars with gaps
 for_window [class="^.*"] border pixel 0
 
+
+#**************************** Other *****************************
+
+# Correctly handle floating dialogs
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [title="Preferences$"] floating enable
+
+# Get rid of mouse cursor warping when switching outpus
+mouse_warping none
+
+
 #**************************** Status Bar *****************************
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -169,8 +178,8 @@ bar {
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers
 
 # Key press repeat rate
-exec xset r rate 300 30
+exec_always --no-startup-id xset r rate 300 30
 
 # Switch caps and Escape
-exec setxkbmap -option caps:escape
+exec_always --no-startup-id setxkbmap -option caps:escape
 
