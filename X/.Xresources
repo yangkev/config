@@ -24,15 +24,20 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 
-! Enables copy/paste with Ctrl-Shift-C/V
+! Perl Extensions
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.perl-ext-common: default,matcher,clipboard
+
+! Enables copy/paste with Ctrl-Shift-C/V
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+! Clickable URLS
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
 
 *.saveLines: 8192
 *.internalBorder: 10
 *.cursorBlink: true
 *.dynamicColors:on
-
