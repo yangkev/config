@@ -1,0 +1,41 @@
+! Breeze Dark theme
+
+#define base00 #2a2e32
+#define base01 #c0392b
+#define base02 #218058
+#define base03 #fdbc4b
+#define base04 #2980b9
+#define base05 #8e44ad
+#define base06 #27aeae
+#define base07 #acada1
+#define base08 #31363b
+#define base09 #f44f4f
+#define base0A #27ae60
+#define base0B #fdbc4b
+#define base0C #0099ff
+#define base0D #af81ff
+#define base0E #31dddd
+#define base0F #cfd0c2
+
+! special
+*.foreground:   #cfcfc2
+*.background:   #232629
+*.cursorColor:  #cfcfc2
+
+*.color0:        base00
+*.color1:        base01
+*.color2:        base02
+*.color3:        base03
+*.color4:        base04
+*.color5:        base05
+*.color6:        base06
+*.color7:        base07
+
+*.color8:        base08
+*.color9:        base09
+*.color10:       base0A
+*.color11:        base0B
+*.color12:        base0C
+*.color13:        base0D
+*.color14:        base0E
+*.color15:        base0F
