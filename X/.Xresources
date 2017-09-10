@@ -3,15 +3,15 @@
 
 ! Xft Settings
 Xft.autohint: 0
-Xft.antialias: 1
-Xft.dpi: 96
+Xft.antialias: true
+Xft.dpi: 220
 Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 
 ! URXVT
-URxvt.font: xft:Ubuntu Mono:pixelsize=16,style=regular
+URxvt.font: xft:Ubuntu Mono:size=12,style=regular
 URxvt.letterSpace: true
 URxvt.internalBorder: 10
 URxvt.externalBorder: 0

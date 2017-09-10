@@ -161,18 +161,13 @@ for_window [title="Preferences$"] floating enable
 # Get rid of mouse cursor warping when switching outpus
 mouse_warping none
 
-
-#**************************** Status Bar *****************************
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    font pango:monospace 8
-    status_command i3status
-    tray_output primary
-}
-
 #*************************** App Settings ****************************
+
+# HiDPI
+exec_always --no-startup-id xrandr --dpi 220
+
+# Natural Scrolling
+exec_always --no-startup-id xmodmap ~/.Xmodmap
 
 # Wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers
@@ -183,3 +178,12 @@ exec_always --no-startup-id xset r rate 300 30
 # Switch caps and Escape
 exec_always --no-startup-id setxkbmap -option caps:escape
 
+#**************************** Status Bar *****************************
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    font pango:monospace 8
+    status_command i3status
+    tray_output primary
+}
