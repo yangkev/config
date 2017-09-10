@@ -27,7 +27,7 @@ URxvt*scrollTtyKeypress: true
 ! Perl Extensions
 URxvt.iso14755: false
 URxvt.iso14755_52: false
-URxvt.perl-ext-common: default,matcher,clipboard
+URxvt.perl-ext-common: default,matcher,clipboard,resize-font
 
 ! Enables copy/paste with Ctrl-Shift-C/V
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
