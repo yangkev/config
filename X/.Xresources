@@ -4,14 +4,14 @@
 ! Xft Settings
 Xft.autohint: 0
 Xft.antialias: true
-Xft.dpi: 220
+Xft.dpi: 192
 Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 
 ! URXVT
-URxvt.font: xft:Ubuntu Mono:size=12,style=regular
+URxvt.font: xft:Inconsolata for Powerline:size=13,style=regular
 URxvt.letterSpace: true
 URxvt.internalBorder: 10
 URxvt.externalBorder: 0
