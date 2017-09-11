@@ -164,7 +164,7 @@ mouse_warping none
 #*************************** App Settings ****************************
 
 # HiDPI
-exec_always --no-startup-id xrandr --dpi 220
+exec_always --no-startup-id xrandr --dpi 192
 
 # Natural Scrolling
 exec_always --no-startup-id xmodmap ~/.Xmodmap
