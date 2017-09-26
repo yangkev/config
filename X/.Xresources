@@ -11,8 +11,8 @@ Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 
 ! URXVT
-URxvt.font: xft:Ubuntu Mono:pixelsize=16,style=regular
-URxvt.letterSpace: true
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=11,style=regular
+URxvt.letterSpace: -1
 URxvt.internalBorder: 10
 URxvt.externalBorder: 0
 URxvt.depth: 32
