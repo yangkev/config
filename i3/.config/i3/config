@@ -170,7 +170,7 @@ exec_always --no-startup-id xrandr --dpi 192
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 
 # Wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/current
 
 # Key press repeat rate
 exec_always --no-startup-id xset r rate 300 30
