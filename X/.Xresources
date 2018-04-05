@@ -13,8 +13,7 @@ Xft.rgba: rgb
 ! URXVT
 URxvt.font: xft:Inconsolata for Powerline:size=10,style=regular
 URxvt.letterSpace: true
-URxvt.internalBorder: 10
-URxvt.externalBorder: 0
+URxvt.externalBorder: 10
 URxvt.depth: 32
 URxvt*visualBell: false
 URxvt*terminalName: rxvt-unicode-256color
@@ -38,6 +37,6 @@ URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 
 *.saveLines: 8192
-*.internalBorder: 10
+*.internalBorder: 0
 *.cursorBlink: true
 *.dynamicColors:on
