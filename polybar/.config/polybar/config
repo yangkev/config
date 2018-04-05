@@ -1,7 +1,6 @@
 [colors]
 background = ${xrdb:color0:#222}
-foreground = ${xrdb:color15:#444}
-
+foreground = ${self.white}
 red = ${xrdb:color1}
 green = ${xrdb:color2}
 yellow = ${xrdb:color3}
@@ -15,13 +14,13 @@ dpi = 192
 monitor = ${env:MONITOR}
 monitor-fallback = 
 width = 100%
-height = 48
-separator = " "
+height = 36
 background = ${colors.background}
 foreground = ${colors.foreground}
-underline-size = 0
-overline-size = 0
-font-0 = "DejaVu Sans Mono:size=10:antialias=false;0"
+
+font-0 = "DejaVu Sans Mono:size=8:antialias=false;0"
+font-1 = "Font Awesome 5 Free:pixelsize=8;-1"
+font-2 = "Font Awesome 5 Free Solid:pixelsize=8;-1"
 
 [bar/top]
 inherit = bar/master
@@ -29,44 +28,41 @@ modules-left = i3
 modules-center = xwindow
 modules-right = network battery xbacklight date
 
+underline-size = 4
+module-margin = 1
+padding-right = 1
+
 tray-position = right
 tray-detached = false
-tray-maxsize = 48
-tray-padding = 2
+tray-maxsize = 36
+tray-padding = 1
 
 wm-restack = i3 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
-
 enable-ipc = true
 
 ; MODULES
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:50:...%
-label-padding = 4
+format-padding = 4
+label = %title%
+label-maxlen = 50
 
 [module/date]
 type = internal/date
+format = <label>
 interval = 1.0
+date = %b %d
+time = %I:%M
+date-alt = %a %b %d,%Y 
+time-alt = %I:%M %p
 
-; See "man date" for details on how to format the date string
-; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = %a %b %d,%Y
-time = %I:%M %p
-
-; if `date-alt` or `time-alt` is defined, clicking
-; the module will toggle between formats
-date-alt = %A, %d %B %Y
-time-alt = %I:%M:%S %p
-format-padding = 3
-label = %date%  %time%
+label =  %date%   %time%
 
 [module/i3]
 type = internal/i3
 
-format = <label-state> <label-mode>
+format = <label-state><label-mode>
 index-sort = true
 enable-click = true
 enable-scroll = false
@@ -74,13 +70,24 @@ enable-scroll = false
 ; Only show workspaces defined on the same output as the bar
 pin-workspaces = true
 
-label-focused-background = ${colors.blue}
+label-mode = %mode%
+label-mode-padding = k
+label-mode-background = ${colors.magenta}
+
+label-focused = %name%
+;label-focused-background = ${colors.blue}
+label-focused-underline = ${colors.blue}
 label-focused-foreground = ${colors.white}
 label-focused-padding = 2
 
+label-unfocused = %name%
 label-unfocused-padding = 2
+
+label-visible = %name%
+label-visible-underline = ${colors.magenta}
 label-visible-padding = 2
 
+label-urgent = %name%
 label-urgent-background = ${colors.red}
 label-urgent-padding = 2
 
@@ -89,8 +96,10 @@ type = internal/network
 interface = wlp2s0
 interval = 3.0
 
-format-connected = <label-connected>
-label-connected = Wifi: %essid:0:10:...%
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid:0:10:...%
+
+ramp-signal-0 = 
 
 ; [module/volume]
 ; type = internal/volume
@@ -108,95 +117,45 @@ label-connected = Wifi: %essid:0:10:...%
 ; ramp-volume-2 = 
 ; ramp-headphones-0 = 
 
-; [module/padding]
-; type = custom/text
-; content = 	 
-; content-foreground = #00000000
-; content-background = #55000000
-; 
-
 [module/battery]
 type = internal/battery
-
+time-format = %H:%M
 full-at = 99
-
 battery = BAT0
 adapter = AC0
-
 poll-interval = 5
 
-; format-charging = <animation-charging>  <label-charging>
-format-charging =  <label-charging>
+format-charging = <animation-charging> <label-charging>
+label-charging = %percentage%%
 
-; format-discharging = <ramp-capacity>  <label-discharging>
-format-discharging =  <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%% (%time%)
 
-; format-full = <ramp-capacity>  <label-full>
 format-full =  <label-full>
+label-full = %percentage%%
 
-label-charging = Charging: %percentage%
-label-discharging = %percentage%
-label-full = %percentage%
-; format-charging-padding = 3
-; format-discharging-padding = 3
-; format-full-padding = 3
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
-; ramp-capacity-0 = 
-; ramp-capacity-1 = 
-; ramp-capacity-2 = 
-; ramp-capacity-3 = 
-; ramp-capacity-4 = 
-; 
-; animation-charging-0 = 
-; animation-charging-1 = 
-; animation-charging-2 = 
-; animation-charging-3 = 
-; animation-charging-4 = 
-; animation-charging-framerate = 750
- 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
 [module/xbacklight]
 type = internal/xbacklight
 
 enable-scroll = true
 
-; format = <ramp> <label>
-format = <bar> <label>
+format = <ramp> <label>
 label = %percentage%
 
-bar-width = 10
-bar-indicator = |
-bar-fill = —
-bar-empty = —
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-
-; [module/powermenu]
-; type = custom/menu
-; 
-; label-open =   
-; ;label-open-background = #dd0000
-; ;label-open-foreground = #fff
-; label-close = cancel
-; ;label-close-background = #dd0000
-; ;label-close-foreground = #fff
-; label-open-padding = 4 
-; label-close-padding = 3 
-; 
-; menu-0-0 = reboot
-; menu-0-0-exec = menu-open-1
-; menu-0-1 = power off
-; menu-0-1-exec = menu-open-2
-; menu-0-0-padding = 3
-; menu-0-1-padding = 3
-; 
-; menu-1-0 = reboot?  
-; menu-1-0-exec = sudo reboot
-; menu-1-0-padding = 3
-; 
-; menu-2-0 = power off?  
-; menu-2-0-exec = sudo poweroff
-; menu-2-0-padding = 3
