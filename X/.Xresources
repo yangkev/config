@@ -11,7 +11,7 @@ Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 
 ! URXVT
-URxvt.font: xft:DejaVu Sans Mono for Powerline:size=11,style=regular
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=10,style=regular
 URxvt.letterSpace: -1
 URxvt.internalBorder: 10
 URxvt.externalBorder: 0
@@ -21,8 +21,10 @@ URxvt*terminalName: rxvt-unicode-256color
 
 URxvt.scrollBar: false
 URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: true
+URxvt*scrollWithBuffer: false
 URxvt*scrollTtyKeypress: true
+
+URxvt*buffered: true
 
 ! Perl Extensions
 URxvt.iso14755: false
