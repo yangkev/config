@@ -3,7 +3,7 @@
 
 ! Xft Settings
 Xft.autohint: 0
-Xft.antialias: 1
+Xft.antialias: true
 Xft.dpi: 96
 Xft.hinting: true
 Xft.hintstyle: hintslight
@@ -13,8 +13,7 @@ Xft.rgba: rgb
 ! URXVT
 URxvt.font: xft:DejaVu Sans Mono for Powerline:size=10,style=regular
 URxvt.letterSpace: -1
-URxvt.internalBorder: 10
-URxvt.externalBorder: 0
+URxvt.externalBorder: 10
 URxvt.depth: 32
 URxvt*visualBell: false
 URxvt*terminalName: rxvt-unicode-256color
@@ -40,6 +39,6 @@ URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 
 *.saveLines: 8192
-*.internalBorder: 10
+*.internalBorder: 0
 *.cursorBlink: true
 *.dynamicColors:on
