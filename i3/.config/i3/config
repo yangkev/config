@@ -179,3 +179,9 @@ exec_always --no-startup-id ~/config/polybar/.config/polybar/launch.sh
 
 # GNOME settings (gtk apps)
 exec_always --no-startup-id gnome-settings-daemon
+
+# Dropbox
+exec --no-startup-id dropbox
+
+# Redshift
+exec --no-startup-id redshift
