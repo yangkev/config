@@ -224,6 +224,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -10%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 #*************************** App Settings ****************************
+# HiDPI
+exec_always --no-startup-id xrandr --dpi 168
 
 # Natural Scrolling
 exec_always --no-startup-id xmodmap ~/.Xmodmap

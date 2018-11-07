@@ -10,6 +10,7 @@ cyan = ${xrdb:color6}
 white = #fcfcfc
 
 [bar/master]
+dpi = 168
 monitor = ${env:MONITOR}
 monitor-fallback = 
 width = 100%
