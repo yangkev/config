@@ -52,9 +52,9 @@ type = internal/date
 format = <label>
 interval = 1.0
 date = %b %d
-time = %I:%M
+time = %l:%M %p
 date-alt = %a %b %d,%Y 
-time-alt = %I:%M %p
+time-alt = %l:%M %p
 
 label =  %date%   %time%
 
