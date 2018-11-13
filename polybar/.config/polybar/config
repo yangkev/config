@@ -1,5 +1,5 @@
 [colors]
-background = ${xrdb:color0:#222}
+background = ${xrdb:background:#222}
 foreground = ${self.white}
 red = ${xrdb:color1}
 green = ${xrdb:color2}
@@ -27,7 +27,7 @@ modules-left = i3
 modules-center = xwindow
 modules-right = network date
 
-underline-size = 3
+underline-size = 2
 module-margin = 1
 padding-right = 1
 
