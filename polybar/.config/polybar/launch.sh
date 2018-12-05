@@ -12,3 +12,10 @@ do
     export MONITOR=$output
     polybar top &
 done
+
+# Launch bar on primary only
+# for output in $(xrandr -q | grep "primary" | cut -d ' ' -f1)
+# do
+#     export MONITOR=$output
+#     polybar top --reload &
+# done
