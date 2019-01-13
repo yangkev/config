@@ -11,7 +11,7 @@ Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 
 ! URXVT
-URxvt.font: xft:Inconsolata for Powerline:size=11,style=regular
+URxvt.font: xft:Inconsolata Nerd Font:size=11,style=regular
 URxvt.letterSpace: true
 URxvt.externalBorder: 0
 URxvt.depth: 32
