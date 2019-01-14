@@ -131,20 +131,22 @@ bindsym $mod+Tab focus output right
 bindsym $mod+Shift+x move workspace to output right
 bindsym $mod+x move container to output right
 
-mode "external display" {
+set $mode_display External Display (x) kill, (e) extend, (d) duplicate
+mode "$mode_display" {
     # Extend (external monitor right of primary)
     # bindsym e
 
     # Duplicate (external monitor duplicate of primary)
     # Kill all external displays
-    bindsym x exec --no-startup-id ~/config/bin/displays.sh -x
-    bindsym e exec --no-startup-id ~/config/bin/displays.sh -e
-    bindsym d exec --no-startup-id ~/config/bin/displays.sh -d
+    bindsym x exec --no-startup-id ~/config/bin/displays.sh -x, mode "default"
+    bindsym e exec --no-startup-id ~/config/bin/displays.sh -e, mode "default"
+    bindsym d exec --no-startup-id ~/config/bin/displays.sh -d, mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+m mode "external display"
+bindsym $mod+m mode $mode_display
+
 #**************************** Workspaces *****************************
 
 
