@@ -175,6 +175,26 @@ for_window [title="Preferences$"] floating enable
 # Get rid of mouse cursor warping when switching outpus
 mouse_warping none
 
+#*************************** Power Management ****************************
+set $Locker ~/config/bin/lock.sh
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker -l, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker -s, mode "default"
+    bindsym h exec --no-startup-id $Locker -h, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Use mod+[Escape/~/`]
+bindsym $mod+grave mode "$mode_system"
+
 #*************************** App Settings ****************************
 
 # Natural Scrolling
