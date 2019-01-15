@@ -196,7 +196,7 @@ mode "$mode_system" {
 }
 
 # Use mod+[Escape/~/`]
-bindsym $mod+grave mode "$mode_system"
+bindsym $mod+Shift+grave mode "$mode_system"
 
 #*************************** App Settings ****************************
 
