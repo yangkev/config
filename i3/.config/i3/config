@@ -182,9 +182,10 @@ set $Locker ~/config/bin/lock.sh
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker -l, mode "default"
+    bindsym l exec --no-startup-id $Locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker -s, mode "default"
+    # Use xss-lock to manage suspend hooked lock
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker -h, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
@@ -222,3 +223,6 @@ exec --no-startup-id dropbox
 
 # Redshift
 exec --no-startup-id redshift
+
+# Execute screen locker on suspend
+exec_always --no-startup-id "xss-lock -l -- $Locker &"
