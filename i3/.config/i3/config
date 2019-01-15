@@ -215,14 +215,11 @@ exec_always --no-startup-id setxkbmap -option caps:escape
 # Polybar
 exec_always --no-startup-id ~/config/polybar/.config/polybar/launch.sh
 
-# GNOME settings (gtk apps)
-exec_always --no-startup-id gnome-settings-daemon
+# Set screensaver, suspend, display power management settings
+exec_always --no-startup-id "~/config/bin/suspension.sh"
 
 # Dropbox
 exec --no-startup-id dropbox
 
 # Redshift
 exec --no-startup-id redshift
-
-# Execute screen locker on suspend
-exec_always --no-startup-id "xss-lock -l -- $Locker &"
