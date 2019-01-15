@@ -30,7 +30,7 @@ set_timeout() {
   xss-lock -l -- "$LOCKER" >/dev/null 2>&1 &
 
   # suspend system after 10 minutes
-  xautolock -exit >/dev/null 2>&1
+  xautolock -exit >/dev/null 2>&1 && sleep 1
   xautolock -time "$SUSPEND_TIME" -detectsleep -locker 'systemctl suspend' >/dev/null 2>&1 &
 }
 
