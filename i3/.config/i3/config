@@ -239,3 +239,7 @@ exec --no-startup-id dropbox
 
 # Redshift
 exec --no-startup-id redshift
+
+# screenshotting
+set $Scrot ~/config/bin/scrot.sh
+bindsym --release $mod+Shift+s exec --no-startup-id "$Scrot"
