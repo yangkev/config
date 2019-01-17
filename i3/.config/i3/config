@@ -214,6 +214,15 @@ mode "$mode_power" {
 # Use Alt+Shift+[Escape/~/` key]
 bindsym $sup+Shift+grave mode "$mode_power"
 
+
+#*************************** Sound ****************************
+# increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10%
+# decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -10%
+# mute sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
 #*************************** App Settings ****************************
 
 # Natural Scrolling
