@@ -10,7 +10,7 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 for output in $(xrandr -q | grep " connected" | cut -d ' ' -f1)
 do
     export MONITOR=$output
-    polybar top &
+    polybar top --reload &
 done
 
 # Launch bar on primary only
