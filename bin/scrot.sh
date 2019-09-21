@@ -1,6 +1,6 @@
 #!/bin/bash
 
-feh_command='feh --fullscreen $f'
+feh_command='feh --draw-actions --fullscreen $f'
 # Press "a" to bring up actions, then 0 to save screenshot to ~/Pictures/screenshots/
 feh_action='--action '\''[save to ~/Pictures/screenshots/] cp -t ~/Pictures/screenshots/ %f'\'''
 # cleanup temporary image file
