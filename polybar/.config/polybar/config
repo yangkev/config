@@ -26,7 +26,7 @@ font-2 = "Font Awesome 5 Free Solid:pixelsize=8;-1"
 inherit = bar/master
 modules-left = i3
 modules-center = xwindow
-modules-right = network volume date
+modules-right = network battery volume xbacklight date
 
 underline-size = 3
 module-margin = 1
