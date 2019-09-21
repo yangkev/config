@@ -128,11 +128,11 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Tab focus output right
 
 # Move the whole workspace to the next output
-bindsym $mod+Shift+x move workspace to output right
-bindsym $mod+x move container to output right
+bindsym $mod+Shift+x move workspace to output down
+bindsym $mod+x move container to output down
 
 set $Display ~/config/bin/displays.sh
-set $mode_display External Display (x) kill, (e) extend, (d) duplicate
+set $mode_display External Display [x] kill | [e] extend | [d] duplicate
 mode "$mode_display" {
     # Extend (external monitor right of primary)
     # bindsym e
